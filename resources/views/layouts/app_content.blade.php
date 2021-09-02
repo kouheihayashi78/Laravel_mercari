@@ -27,7 +27,7 @@
             <a href="{{ route('top') }}"><img src="/images/logo-1.png" /></a>
         </div>
         
-        <div class="d-flex justify-content-center mt-5">
+        <div class="d-flex justify-content-center mt-4">
             <div class="col-auto">
                 @yield('content')
             </div>
