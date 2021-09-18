@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MyPage\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('top');
+
+Route::prefix('mypage')->namespace('MyPage')->middleware('auth')->group(function(){//prefix()はグループ化, namespaceメソッドでコントローラの名前空間の接頭辞を指定
+    Route::get('edit-profile', 'ProfileController@showProfileEdit')->name('mypage.edit-profile');
+});
