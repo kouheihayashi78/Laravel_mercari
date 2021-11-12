@@ -6,6 +6,24 @@
 
 require('./bootstrap');
 
+document.querySelector('.image-picker input') //画像を選択するinputタグのDOMを取得
+    .addEventListener('change', (e) => {
+        /* 
+        第一引数は処理を追加するイベントの種類を指定。
+        第二引数は関数(リスナー)を指定。イベントを検出した時にこの関数が実行される。 
+        */
+        const input = e.target;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            //imgタグのsrc属性を更新するために、imgタグのDOMを取得
+            //closestメソッドは親方向に向かってDOMを検索
+            input.closest('.image-picker').querySelector('img').src = e.target.result
+            //読み込んだ結果をimgタグのsrcフィールドに代入
+        };
+        reader.readAsDataURL(input.files[0]);
+        // readAsDataURLメソッドで画像の読み込みを開始
+    });
+
 window.Vue = require('vue').default;
 
 /**
