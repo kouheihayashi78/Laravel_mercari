@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+
 use App\Models\User;
+use App\Models\ItemCondition;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -13,7 +16,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
-        User::factory(1)->create();
+        
+        // User::factory(1)->create();
+        // ItemCondition::factory(6)->create();
+
+        $this->call(UserSeeder::class);
+        $this->call(ItemConditionSeeder::class);
+        $this->call(PrimaryCategorySeeder::class);
+        $this->call(SecondaryCategorySeeder::class);
     }
 }
