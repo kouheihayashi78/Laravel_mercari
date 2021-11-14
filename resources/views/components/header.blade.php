@@ -29,7 +29,10 @@
                     {{-- ドロップダウンメニュー --}}
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a href="{{ route('sell') }}" class="dropdown-item">
-                        <i class="fas fa-camera text-left" style="width: 30px"></i>商品を出品する
+                            <i class="fas fa-camera text-left" style="width: 30px"></i>商品を出品する
+                        </a>
+                        <a href="{{ route('mypage.sold-items') }}" class="dropdown-item">
+                            <i class="fas fa-store-alt text-left" style="width: 30px"></i>出品した商品
                         </a>
                         <a href="{{ route('mypage.edit-profile') }}" class="dropdown-item">
                             <i class="far fa-address-card text-left" style="width: 30px"></i>プロフィール編集
