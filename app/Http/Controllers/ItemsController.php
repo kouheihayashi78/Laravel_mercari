@@ -60,4 +60,12 @@ class ItemsController extends Controller
         // var_dump($item);
         return view('items.item_detail', compact('item', $item));
     }
+
+    public function showBuyItemForm(Item $item) 
+    {
+        if(!$item->isStateSelling){
+            abort(404);// abort関数でエラーページを返す
+        }
+        return view('items.item_buy_form', compact('item', $item));
+    }
 }
