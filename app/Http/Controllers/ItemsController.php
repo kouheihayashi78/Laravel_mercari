@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Payjp\Charge;
 
 class ItemsController extends Controller
 {
@@ -109,13 +110,24 @@ class ItemsController extends Controller
                 throw new \Exception('多重決済');
             }
 
-            $item->state     = Item::STATE_BOUGHT;
+            $item->state = Item::STATE_BOUGHT;
             $item->bought_at = Carbon::now();
-            $item->buyer_id  = $buyerID;
+            $item->buyer_id = $buyerID;
             $item->save();
 
             $seller->sales += $item->price;
             $seller->save();
+
+            $charge = Charge::create([
+                'card' => $token, // カードトークン
+                'amount' => $item->price, // 金額
+                'currency' => 'jpy' //通貨
+            ]);
+
+            if(!$charge->captured) {
+                throw new \Exception('支払い確定失敗');
+            }
+
         } catch (\Exception $e) {
             DB::rollBack();
             throw $e;
