@@ -14,6 +14,11 @@ class Item extends Model
     // 購入済み
     const STATE_BOUGHT = 'bought';
 
+    protected $casts = [
+        'bought_at' => 'datetime',
+    ];
+    // castsフィールドを使うと、カラムの値を取り出す際にデータ型を変換させることができる
+
     public function secondaryCategory()
     {
         return $this->belongsTo(SecondaryCategory::class);
