@@ -14,7 +14,8 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
         "payjp/payjp-php": "^1.2",
-        "fakerphp/faker": "^1.9.1"
+        "fakerphp/faker": "^1.9.1",
+        "ext-gd": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
