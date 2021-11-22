@@ -42,9 +42,7 @@ class ItemsController extends Controller
             });
         }
 
-        $selling =Item::STATE_SELLING;
-        $bought =Item::STATE_BOUGHT;
-        $items = $query->orderByRaw("FIELD(state, '" . $selling . "', '" . $bought . "')")
+        $items = $query->orderByRaw("FIELD(state, '" . 'selling'. "', '" . 'bought' . "')")
             ->orderBy('id', 'DESC')
             ->paginate(40);
         // orderByRawメソッドを使って、出品中の商品を先に、購入済みの商品を後に表示
