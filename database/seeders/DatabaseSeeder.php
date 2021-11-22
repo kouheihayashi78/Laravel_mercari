@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         // User::factory(1)->create();
         // ItemCondition::factory(6)->create();
 
-        $this->call(UserSeeder::class);
+        
         $this->call(ItemConditionSeeder::class);
         $this->call(PrimaryCategorySeeder::class);
         $this->call(SecondaryCategorySeeder::class);
