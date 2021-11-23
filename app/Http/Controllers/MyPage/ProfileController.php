@@ -23,10 +23,11 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
         $user->name = $request->input('name');
-        if ($request->has('avatar')) {
-            $fileName = $this->saveAvatar($request->file('avatar'));
-            $user->avatar_file_name = $fileName;
-        }
+        $user->avatar_img = base64_encode(file_get_contents($request->avatar_img));
+        // if ($request->has('avatar')) {
+        //     $fileName = $this->saveAvatar($request->file('avatar'));
+        //     $user->avatar_file_name = $fileName;
+        // }
         $user->save();
 
         return redirect()->back()->with('status', 'プロフィールを変更しました。');
