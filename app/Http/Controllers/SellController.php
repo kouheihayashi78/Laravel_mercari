@@ -37,7 +37,7 @@ class SellController extends Controller
 
         $item = new Item();
         // $item->image_file_name = $imageName;
-        $item->item_image = base64_encode(file_get_contents($request->file('item')));;
+        $item->item_image = base64_encode(file_get_contents($request->item));;
         $item->seller_id = $user->id;
         $item->name = $request->input('name');
         $item->description = $request->input('description');
