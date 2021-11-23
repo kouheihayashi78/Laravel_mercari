@@ -29,7 +29,7 @@
                     <input type="file" name="avatar" class="d-none" accept="image/png,image/jpeg,image/gif" id="avatar" />
                     <label for="avatar" class="d-inline-block">
                         @if (!empty($user->avatar_img))
-                        <img src="data:image/png;base64,{{ $user->img }}" class="rounded-circle" style="object-fit: cover; width: 200px; height: 200px;">
+                        <img src="data:image/png;base64,{{ $user->avatar_img }}" class="rounded-circle" style="object-fit: cover; width: 200px; height: 200px;">
                         @else
                         <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 200px; height: 200px;">
                         @endif

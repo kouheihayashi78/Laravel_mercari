@@ -42,7 +42,7 @@
 
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         @if (!empty($user->avatar_img))
-                        <img src="data:image/png;base64,{{ $user->img }}" class="rounded-circle" style="object-fit: cover; width: 35px; height: 35px;">
+                        <img src="data:image/png;base64,{{ $user->avatar_img }}" class="rounded-circle" style="object-fit: cover; width: 35px; height: 35px;">
                         @else
                         <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 35px; height: 35px;">
                         @endif
