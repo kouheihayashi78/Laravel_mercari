@@ -27,12 +27,12 @@
                 {{-- 商品画像 --}}
                 <div>商品画像</div>
                 <span class="item-image-form image-picker">
-                    <input type="file" name="item-image" class="d-none" accept="image/png,image/jpeg,image/gif" id="item-image" />
-                    <label for="item-image" class="d-inline-block" role="button">
+                    <input type="file" name="item" class="d-none" accept="image/png,image/jpeg,image/gif" id="item" />
+                    <label for="item" class="d-inline-block" role="button">
                         <img src="/images/item-image-default.png" style="object-fit: cover; width: 300px; height: 300px;">
                     </label>
                 </span>
-                @error('item-image')
+                @error('item')
                 <div style="color: #E4342E;" role="alert">
                     <strong>{{ $message }}</strong>
                 </div>
