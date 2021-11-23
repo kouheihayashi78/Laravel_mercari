@@ -21,7 +21,7 @@
 
             <div class="font-weight-bold text-center border-bottom pb-3 pt-3" style="font-size: 24px">商品を出品する</div>
 
-            <form method="POST" action="{{ route('sell') }}" class="p-5" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('sell_post') }}" class="p-5" enctype="multipart/form-data">
                 @csrf
 
                 {{-- 商品画像 --}}

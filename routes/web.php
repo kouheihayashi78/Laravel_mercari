@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('items/{item}/buy', [ItemsController::class, 'showBuyItemForm'])->name('item.buy');
     Route::post('items/{item}/buy', [ItemsController::class, 'buyItem'])->name('item.buy');
     Route::get('sell', [SellController::class, 'showSellForm'])->name('sell');
-    Route::post('sell', [SellController::class, 'sellItem'])->name('sell');
+    Route::post('sell', [SellController::class, 'sellItem'])->name('sell_post');
 });
 Route::prefix('mypage')->as('mypage.')->middleware('auth')->group(function () { //prefix()はグループ化, namespaceメソッドでコントローラの名前空間の接頭辞を指定
     Route::get('edit-profile', [ProfileController::class, 'showProfileEdit'])->name('edit-profile');
