@@ -24,7 +24,7 @@ class SellRequest extends FormRequest
     public function rules()
     {
         return [
-            'item-image'  => ['required', 'file', 'image'],
+            'item'  => ['required', 'file', 'image'],
             'name'        => ['required', 'string', 'max:255'],
             'description' => ['required', 'string', 'max:2000'],
             'category'    => ['required', 'integer'],
