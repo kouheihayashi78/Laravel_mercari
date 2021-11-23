@@ -33,10 +33,11 @@ class SellController extends Controller
     public function sellItem(SellRequest $request)
     {
         $user = Auth::user();
-        $imageName = $this->saveImage($request->file('item-image'));
+        // $imageName = $this->saveImage($request->file('item-image'));
 
         $item = new Item();
-        $item->image_file_name = $imageName;
+        // $item->image_file_name = $imageName;
+        $item->item_image = base64_encode(file_get_contents($request->input('item-image')));;
         $item->seller_id = $user->id;
         $item->name = $request->input('name');
         $item->description = $request->input('description');

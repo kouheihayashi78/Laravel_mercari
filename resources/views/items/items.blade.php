@@ -11,7 +11,7 @@
         <div class="col-3 mb-3">
             <div class="card">
                 <div class="position-relative overflow-hidden">
-                    <img class="card-img-top" src="/storage/item-images/{{$item->image_file_name}}">
+                    <img class="card-img-top" src="data:image/png;base64,{{ $item->item_image }}" >
                     <!-- card-img-top は画像を上に持ってくる -->
                     <div class="position-absolute py-2 px-3" style="left: 0; bottom: 20px; color: white; background-color: rgba(0, 0, 0, 0.70)">
                         <i class="fas fa-yen-sign"></i>
