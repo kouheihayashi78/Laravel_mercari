@@ -14,7 +14,7 @@ class AddItemImageToItemsTable extends Migration
     public function up()
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->longText('item_image')->nullable();
+            $table->longText('item_image');
         });
     }
 
