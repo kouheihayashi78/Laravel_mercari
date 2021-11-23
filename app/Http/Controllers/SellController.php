@@ -46,7 +46,7 @@ class SellController extends Controller
         $item->price = $request->input('price');
         $item->state = Item::STATE_SELLING;
         $item->save();
-
+        dd($item->item_image);
         return redirect()->back()
             ->with('status', '商品を出品しました。');
     }
